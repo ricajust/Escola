@@ -4,7 +4,6 @@ import com.ricajust.escola.entities.Turma;
 import com.ricajust.escola.exceptions.BusinessException;
 import com.ricajust.escola.repositories.TurmaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.expression.ExpressionException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class TurmaService {
     public Turma localizarPorId(int idTurma) {
         return repository
                 .findById(idTurma)
-                .orElseThrow(() -> new ExpressionException("Turma " + idTurma + " não localizada!"));
+                .orElseThrow(() -> new BusinessException("Turma " + idTurma + " não localizada!"));
     }
 
     public List<Turma> localizarTodos() {
