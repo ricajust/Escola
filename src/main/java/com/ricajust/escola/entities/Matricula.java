@@ -18,10 +18,10 @@ public class Matricula {
     private LocalDate dataMatricula;
 
     @ManyToOne
-    @JoinColumn(name = "idTurma", nullable = false)
+    @JoinColumn(name = "idTurma", referencedColumnName = "idTurma", nullable = false)
     private Turma turma;
 
     @ManyToOne
-    @JoinColumn(name = "idAluno", nullable = false)
+    @JoinColumn(name = "idAluno", referencedColumnName = "idAluno", nullable = false)
     private Aluno aluno;
 }
